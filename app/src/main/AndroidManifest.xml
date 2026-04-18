@@ -18,13 +18,13 @@
             android:name=".features.profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".features.auth.RegisterActivity"
+            android:name=".features.auth.register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".features.dashboard.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".features.auth.LoginActivity"
+            android:name=".features.auth.login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

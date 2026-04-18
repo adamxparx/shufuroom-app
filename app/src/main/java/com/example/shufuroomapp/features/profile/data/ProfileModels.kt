@@ -1,6 +1,5 @@
-package com.example.shufuroomapp.features.profile
+package com.example.shufuroomapp.features.profile.data
 
-// Response from /api/profile/me
 data class UserProfile(
     val id: String,
     val firstName: String,
@@ -8,14 +7,20 @@ data class UserProfile(
     val email: String
 )
 
-// Request for PUT /api/profile/me
 data class EditProfileRequest(
     val firstName: String?,
     val lastName: String?
 )
 
-// Response for Update
 data class UpdateProfileResponse(
     val message: String,
     val updatedProfile: UserProfile
 )
+
+// temporary
+data class ChangePasswordRequest(
+    val currentPassword: String,
+    val newPassword: String
+)
+
+data class MessageResponse(val message: String)

@@ -1,7 +1,13 @@
 package com.example.shufuroomapp.core.api
 
 import com.example.shufuroomapp.features.auth.*
-import com.example.shufuroomapp.features.profile.*
+import com.example.shufuroomapp.features.auth.login.data.LoginRequest
+import com.example.shufuroomapp.features.auth.login.data.LoginResponse
+import com.example.shufuroomapp.features.auth.register.data.RegisterRequest
+import com.example.shufuroomapp.features.auth.register.data.RegisterResponse
+import com.example.shufuroomapp.features.profile.data.EditProfileRequest
+import com.example.shufuroomapp.features.profile.data.UpdateProfileResponse
+import com.example.shufuroomapp.features.profile.data.UserProfile
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
