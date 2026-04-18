@@ -2,37 +2,53 @@ package com.example.shufuroomapp.features.dashboard
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.shufuroomapp.R
 import com.example.shufuroomapp.features.auth.login.LoginActivity
-import com.example.shufuroomapp.features.profile.ProfileActivity
 import com.example.shufuroomapp.core.utils.PrefManager
+import com.example.shufuroomapp.databinding.ActivityDashboardBinding
 
-class DashboardActivity : AppCompatActivity() {
+class DashboardActivity : AppCompatActivity(), DashboardContract.View {
+
+    private lateinit var binding: ActivityDashboardBinding
+    private lateinit var presenter: DashboardContract.Presenter
+    private lateinit var prefManager: PrefManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
 
-        val prefManager = PrefManager(this)
-
-        val btnLogout = findViewById<Button>(R.id.btnLogout)
-        val btnProfile = findViewById<Button>(R.id.btnProfile)
-
-        btnLogout.setOnClickListener {
-            prefManager.clear() // Remove the Bearer Token
+        prefManager = PrefManager(this)
+        if (prefManager.getToken() == null) {
             val intent = Intent(this, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
+            return
         }
 
-        btnProfile.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
+        binding = ActivityDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        presenter = DashboardPresenter(this)
+
+
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            presenter.handleNavigation(item.itemId)
         }
 
+        if (savedInstanceState == null) {
+            binding.bottomNavigation.selectedItemId = R.id.nav_home
+        }
+    }
 
+    override fun displayFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
     }
 }

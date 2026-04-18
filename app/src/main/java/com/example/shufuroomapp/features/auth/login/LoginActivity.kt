@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        presenter = LoginPresenter(this, LoginRepository())
+        presenter = LoginPresenter(this, LoginRepository(this))
 
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()

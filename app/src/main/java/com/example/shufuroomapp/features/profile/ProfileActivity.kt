@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.shufuroomapp.R
 import com.example.shufuroomapp.core.api.RetrofitClient
 import com.example.shufuroomapp.core.utils.PrefManager
-import com.example.shufuroomapp.features.auth.ChangePasswordRequest
-import com.example.shufuroomapp.features.auth.MessageResponse
+import com.example.shufuroomapp.features.profile.data.ChangePasswordRequest
 import com.example.shufuroomapp.features.profile.data.EditProfileRequest
+import com.example.shufuroomapp.features.profile.data.MessageResponse
 import com.example.shufuroomapp.features.profile.data.UpdateProfileResponse
 import com.example.shufuroomapp.features.profile.data.UserProfile
 import retrofit2.Call
