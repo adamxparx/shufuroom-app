@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shufuroomapp.R
-import com.example.shufuroomapp.features.auth.LoginActivity
+import com.example.shufuroomapp.features.auth.login.LoginActivity
 import com.example.shufuroomapp.features.profile.ProfileActivity
 import com.example.shufuroomapp.core.utils.PrefManager
 
