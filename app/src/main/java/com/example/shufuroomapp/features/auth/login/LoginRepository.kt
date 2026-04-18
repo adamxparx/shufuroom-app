@@ -1,13 +1,15 @@
 package com.example.shufuroomapp.features.auth.login
 
+import android.content.Context
 import com.example.shufuroomapp.core.api.RetrofitClient
+import com.example.shufuroomapp.core.utils.PrefManager
 import com.example.shufuroomapp.features.auth.login.data.LoginRequest
 import com.example.shufuroomapp.features.auth.login.data.LoginResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginRepository {
+class LoginRepository(private val context: Context) {
     fun performLogin(email: String, pass: String, onResult: (Boolean, String) -> Unit) {
 
         val request = LoginRequest(email, pass)
@@ -15,8 +17,17 @@ class LoginRepository {
         RetrofitClient.instance.login(request).enqueue(object : Callback<LoginResponse>{
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
-                    val loginResponse = response.body()
-                    onResult(true, loginResponse?.message ?: "Login Successful")
+
+                    val body = response.body()
+                    val token = body?.token
+
+                    if (token != null) {
+                        val prefManager = PrefManager(context)
+                        prefManager.saveToken(token)
+                        onResult(true, "Login Successful")
+                    } else {
+                        onResult(false, "Token not found in response")
+                    }
                 } else {
                     onResult(false, "Invalid Email or Password")
                 }
