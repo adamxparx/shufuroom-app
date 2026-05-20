@@ -10,6 +10,7 @@ import com.example.shufuroomapp.databinding.FragmentProfileBinding
 import com.example.shufuroomapp.features.auth.login.LoginActivity
 import com.example.shufuroomapp.features.profile.ProfileContract
 import com.example.shufuroomapp.features.profile.ProfilePresenter
+import com.example.shufuroomapp.features.rooms.add.AddListingActivity
 import com.example.shufuroomapp.features.settings.SettingsActivity
 
 class ProfileFragment : Fragment(R.layout.fragment_profile), ProfileContract.View {
@@ -35,8 +36,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile), ProfileContract.Vie
         }
         
         binding.btnAddListing.setOnClickListener {
-            // Static button for now
-            android.widget.Toast.makeText(requireContext(), "Add Listing coming soon!", android.widget.Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), AddListingActivity::class.java)
+            startActivity(intent)
         }
     }
 

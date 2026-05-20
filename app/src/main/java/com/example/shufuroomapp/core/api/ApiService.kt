@@ -10,7 +10,9 @@ import com.example.shufuroomapp.features.profile.data.EditProfileRequest
 import com.example.shufuroomapp.features.profile.data.MessageResponse
 import com.example.shufuroomapp.features.profile.data.UpdateProfileResponse
 import com.example.shufuroomapp.features.profile.data.UserProfile
+import com.example.shufuroomapp.features.rooms.add.data.AddRoomRequest
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -19,26 +21,29 @@ import retrofit2.http.PUT
 
 interface ApiService {
 
-    @POST("api/auth/login")
+    @POST("auth/login")
     fun login(@Body request: LoginRequest): Call<LoginResponse>
 
-    @POST("api/auth/register")
+    @POST("auth/register")
     fun register(@Body request: RegisterRequest): Call<RegisterResponse>
 
-    @GET("api/profile/me")
+    @GET("profile/me")
     fun getMyProfile(
         @Header("Authorization") token: String
     ): Call<UserProfile>
 
-    @PUT("api/profile/me")
+    @PUT("profile/me")
     fun updateProfile(
         @Header("Authorization") token: String,
         @Body request: EditProfileRequest
     ): Call<UpdateProfileResponse>
 
-    @POST("api/auth/change-password")
+    @POST("auth/change-password")
     fun changePassword(
         @Header("Authorization") token: String,
         @Body request: ChangePasswordRequest
     ): Call<MessageResponse>
+
+    @POST("rooms") // Matches your Spring Boot @PostMapping("/api/rooms")
+    suspend fun addRoom(@Body request: AddRoomRequest): Response<Unit>
 }
