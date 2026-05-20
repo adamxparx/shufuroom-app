@@ -15,7 +15,7 @@
         android:theme="@style/Theme.ShufuRoomApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".features.profile.ProfileActivity"
+            android:name=".features.settings.SettingsActivity"
             android:exported="false" />
         <activity
             android:name=".features.auth.register.RegisterActivity"

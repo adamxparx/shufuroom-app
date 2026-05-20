@@ -1,7 +1,7 @@
 package com.example.shufuroomapp.features.dashboard
 
 import com.example.shufuroomapp.features.dashboard.fragments.HomeFragment
-import com.example.shufuroomapp.features.dashboard.fragments.ProfileFragment
+import com.example.shufuroomapp.features.profile.fragments.ProfileFragment
 
 class DashboardPresenter(
     private var view: DashboardContract.View?

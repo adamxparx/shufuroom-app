@@ -1,9 +1,28 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.ShufuRoomApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/button_pink</item>
+        <item name="android:windowBackground">@color/bg_cream</item>
+        <item name="android:textColor">@color/text_burgundy</item>
     </style>
 
     <style name="Theme.ShufuRoomApp" parent="Base.Theme.ShufuRoomApp" />
+
+    <style name="AppEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_edittext</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/text_burgundy</item>
+        <item name="android:textColorHint">@color/text_burgundy</item>
+    </style>
+
+    <style name="AppButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/button_pink</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.App.Button.Rounded</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.Button.Rounded" parent="">
+        <item name="cornerSize">12dp</item>
+    </style>
 </resources>

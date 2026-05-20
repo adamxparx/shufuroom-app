@@ -31,7 +31,7 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
             presenter.register(fName, lName, email, pass, cPass)
         }
 
-        binding.btnLogin.setOnClickListener {
+        binding.tvLogin.setOnClickListener {
             finish()
         }
 

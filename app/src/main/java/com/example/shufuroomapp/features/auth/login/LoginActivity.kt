@@ -15,9 +15,9 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var presenter: LoginContract.Presenter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -29,10 +29,9 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
             presenter.login(email, pass)
         }
 
-        binding.btnRegister.setOnClickListener {
+        binding.tvSignUp.setOnClickListener {
             navigateToRegister()
         }
-
     }
 
     override fun showLoading() {

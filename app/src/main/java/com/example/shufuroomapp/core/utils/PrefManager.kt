@@ -16,6 +16,22 @@ class PrefManager(context: Context) {
         return sharedPreferences.getString("AUTH_TOKEN", null)
     }
 
+    fun saveFirstName(firstName: String) {
+        sharedPreferences.edit().putString("FIRST_NAME", firstName).apply()
+    }
+
+    fun getFirstName(): String? {
+        return sharedPreferences.getString("FIRST_NAME", null)
+    }
+
+    fun saveLastName(lastName: String) {
+        sharedPreferences.edit().putString("LAST_NAME", lastName).apply()
+    }
+
+    fun getLastName(): String? {
+        return sharedPreferences.getString("LAST_NAME", null)
+    }
+
     fun clear() {
         sharedPreferences.edit().clear().apply()
     }

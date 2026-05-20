@@ -24,6 +24,12 @@ class LoginRepository(private val context: Context) {
                     if (token != null) {
                         val prefManager = PrefManager(context)
                         prefManager.saveToken(token)
+                        
+                        body.user?.user_metadata?.let { metadata ->
+                            prefManager.saveFirstName(metadata.firstName ?: "")
+                            prefManager.saveLastName(metadata.lastName ?: "")
+                        }
+
                         onResult(true, "Login Successful")
                     } else {
                         onResult(false, "Token not found in response")
