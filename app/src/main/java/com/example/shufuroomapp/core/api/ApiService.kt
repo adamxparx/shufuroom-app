@@ -5,6 +5,7 @@ import com.example.shufuroomapp.features.auth.login.data.LoginRequest
 import com.example.shufuroomapp.features.auth.login.data.LoginResponse
 import com.example.shufuroomapp.features.auth.register.data.RegisterRequest
 import com.example.shufuroomapp.features.auth.register.data.RegisterResponse
+import com.example.shufuroomapp.features.dashboard.data.RoomResponse
 import com.example.shufuroomapp.features.profile.data.ChangePasswordRequest
 import com.example.shufuroomapp.features.profile.data.EditProfileRequest
 import com.example.shufuroomapp.features.profile.data.MessageResponse
@@ -46,4 +47,10 @@ interface ApiService {
 
     @POST("rooms") // Matches your Spring Boot @PostMapping("/api/rooms")
     suspend fun addRoom(@Body request: AddRoomRequest): Response<Unit>
+
+    @GET("/api/rooms")
+    suspend fun getRooms(): retrofit2.Response<List<RoomResponse>>
+
+    @GET("/api/rooms/my-listings")
+    suspend fun getMyListings(): retrofit2.Response<List<RoomResponse>>
 }

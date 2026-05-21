@@ -70,18 +70,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/tvMyListingLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Listing"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cvUserInfo" />
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAddListing"
         android:layout_width="wrap_content"
@@ -97,6 +85,29 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMyListingLabel" />
+        app:layout_constraintTop_toBottomOf="@id/cvUserInfo" />
+
+    <TextView
+        android:id="@+id/tvMyListingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Listing"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddListing" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProfileGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        app:layout_constraintTop_toBottomOf="@+id/tvMyListingLabel"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
