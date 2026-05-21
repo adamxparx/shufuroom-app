@@ -69,4 +69,7 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // Coil for loading Supabase image URLs
+    implementation("io.coil-kt:coil:2.6.0")
 }
