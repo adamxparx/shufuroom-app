@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="brand_burgundy">#850E35</color>
+    <color name="brand_cream">#FCF5ED</color>
+    <color name="brand_pink">#EE6983</color>
+    <color name="brand_white">#FFFFFF</color>
+    <color name="gray_text">#888888</color>
 
-    <color name="bg_cream">#FEF7F2</color>
-    <color name="text_burgundy">#6D112E</color>
-    <color name="button_pink">#ED6E85</color>
-    <color name="border_pink">#FFD1D9</color>
-
-    <color name="colorPrimary">#ED6E85</color>
-    <color name="colorPrimaryDark">#6D112E</color>
-    <color name="colorAccent">#ED6E85</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="bg_cream">#FCF5ED</color>
+    <color name="text_burgundy">#850E35</color>
+    <color name="border_pink">#EE6983</color>
+    <color name="button_pink">#EE6983</color>
 </resources>

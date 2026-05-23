@@ -19,21 +19,12 @@ class SettingsPresenter(
     private val token = "Bearer ${prefManager.getToken()}"
 
     override fun loadCurrentProfile() {
-        view?.showLoading(true)
-        RetrofitClient.instance.getMyProfile(token).enqueue(object : Callback<UserProfile> {
-            override fun onResponse(call: Call<UserProfile>, response: Response<UserProfile>) {
-                view?.showLoading(false)
-                if (response.isSuccessful) {
-                    response.body()?.let {
-                        view?.populateProfile(it.firstName, it.lastName)
-                    }
-                }
-            }
-            override fun onFailure(call: Call<UserProfile>, t: Throwable) {
-                view?.showLoading(false)
-                view?.showMessage("Failed to load profile info")
-            }
-        })
+        val firstName = prefManager.getFirstName() ?: ""
+        val lastName = prefManager.getLastName() ?: ""
+
+        if (firstName.isNotEmpty() || lastName.isNotEmpty()) {
+            view?.populateProfile(firstName, lastName)
+        }
     }
 
     override fun updateProfile(firstName: String, lastName: String) {

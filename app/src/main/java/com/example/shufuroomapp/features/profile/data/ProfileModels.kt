@@ -17,7 +17,6 @@ data class UpdateProfileResponse(
     val updatedProfile: UserProfile
 )
 
-// temporary
 data class ChangePasswordRequest(
     val currentPassword: String,
     val newPassword: String

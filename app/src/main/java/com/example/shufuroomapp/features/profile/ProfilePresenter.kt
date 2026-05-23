@@ -1,7 +1,8 @@
-package com.example.shufuroomapp.features.profile
+package com.example.shufuroomapp.features.bookings.adapter
 
 import com.example.shufuroomapp.core.api.RetrofitClient
 import com.example.shufuroomapp.core.utils.PrefManager
+import com.example.shufuroomapp.features.profile.ProfileContract
 import kotlinx.coroutines.*
 
 class ProfilePresenter(
@@ -9,7 +10,6 @@ class ProfilePresenter(
     private var prefManager: PrefManager
 ) : ProfileContract.Presenter {
 
-    // Add Coroutine setup for network calls
     private val job = Job()
     private val scope = CoroutineScope(Dispatchers.Main + job)
 
@@ -44,4 +44,5 @@ class ProfilePresenter(
         view = null
         job.cancel() // Cancel network calls if user leaves
     }
+
 }

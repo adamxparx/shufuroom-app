@@ -16,6 +16,15 @@
         android:theme="@style/Theme.ShufuRoomApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".features.requests.BookingRequestsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".features.rooms.booking.BookingFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".features.rooms.detail.RoomDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".features.rooms.add.AddListingActivity"
             android:exported="false" />
         <activity

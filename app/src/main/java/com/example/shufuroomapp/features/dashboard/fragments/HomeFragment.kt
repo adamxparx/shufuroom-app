@@ -23,16 +23,10 @@ class HomeFragment : Fragment(R.layout.fragment_home), HomeContract.View {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHomeBinding.bind(view)
 
-        val prefManager = PrefManager(requireContext())
-        val firstName = prefManager.getFirstName() ?: "User"
-        binding.tvHomeWelcome.text = "Welcome $firstName"
-
-        // 1. Setup the Adapter with an empty list at first
         adapter = RoomAdapter(emptyList())
         binding.rvRooms.layoutManager = LinearLayoutManager(requireContext())
         binding.rvRooms.adapter = adapter
 
-        // 2. Initialize the Presenter and tell it to fetch the data
         presenter = HomePresenter(this)
         presenter.fetchRooms()
     }
