@@ -9,73 +9,89 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#FFFFFF"
         android:elevation="4dp"
         app:title="Add New Room"
-        app:navigationIcon="?attr/homeAsUpIndicator" /> <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+        app:navigationIcon="@drawable/ic_back" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@color/bg_cream">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/ivRoomImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="#E0E0E0"
-            android:scaleType="centerCrop"
-            android:src="@android:drawable/ic_menu_camera"
-            android:layout_marginBottom="16dp"/>
-
-        <EditText
-            android:id="@+id/etTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Room Title" />
+            android:orientation="vertical"
+            android:padding="32dp">
 
-        <EditText
-            android:id="@+id/etDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Description"
-            android:inputType="textMultiLine"
-            android:lines="3" />
+            <ImageView
+                android:id="@+id/ivRoomImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#EEEEEE"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_camera"
+                app:tint="@color/gray_text"
+                android:layout_marginBottom="24dp"/>
 
-        <EditText
-            android:id="@+id/etPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Price per night"
-            android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Room Title"
+                android:background="@drawable/bg_edittext"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="16dp" />
 
-        <EditText
-            android:id="@+id/etBeds"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Number of beds"
-            android:inputType="number" />
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:gravity="top|start"
+                android:padding="16dp"
+                android:background="@drawable/bg_edittext"
+                android:layout_marginBottom="16dp" />
 
-        <Button
-            android:id="@+id/btnPublish"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Publish Listing" />
+            <EditText
+                android:id="@+id/etPrice"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Price per night"
+                android:inputType="numberDecimal"
+                android:background="@drawable/bg_edittext"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="16dp" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:visibility="gone" />
+            <EditText
+                android:id="@+id/etBeds"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="Number of beds"
+                android:inputType="number"
+                android:background="@drawable/bg_edittext"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="24dp" />
 
-    </LinearLayout>
-</ScrollView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPublish"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Publish Listing"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="24dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

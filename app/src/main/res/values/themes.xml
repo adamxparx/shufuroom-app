@@ -1,28 +1,27 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.ShufuRoomApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/button_pink</item>
-        <item name="android:windowBackground">@color/bg_cream</item>
-        <item name="android:textColor">@color/text_burgundy</item>
+    <style name="Theme.ShufuRoomApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="android:colorBackground">@color/brand_cream</item>
+
+        <item name="colorSurface">@color/brand_white</item>
+
+        <item name="colorPrimary">@color/brand_pink</item>
+        <item name="colorOnPrimary">@color/brand_white</item> <item name="colorOnBackground">@color/brand_burgundy</item>
+        <item name="colorOnSurface">@color/brand_burgundy</item>
+
+        <item name="toolbarStyle">@style/Widget.Shufuroom.Toolbar</item>
+
+        <item name="bottomNavigationStyle">@style/Widget.Shufuroom.BottomNav</item>
     </style>
 
-    <style name="Theme.ShufuRoomApp" parent="Base.Theme.ShufuRoomApp" />
+    <style name="Widget.Shufuroom.Toolbar" parent="Widget.MaterialComponents.Toolbar.Surface">
+        <item name="android:background">@color/brand_white</item>
+        <item name="titleTextColor">@color/brand_burgundy</item>
+        <item name="navigationIconTint">@color/brand_pink</item> </style>
 
-    <style name="AppEditTextStyle" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@drawable/bg_edittext</item>
-        <item name="android:padding">16dp</item>
-        <item name="android:textColor">@color/text_burgundy</item>
-        <item name="android:textColorHint">@color/text_burgundy</item>
-    </style>
-
-    <style name="AppButtonStyle" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@color/button_pink</item>
-        <item name="android:insetTop">0dp</item>
-        <item name="android:insetBottom">0dp</item>
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.App.Button.Rounded</item>
-    </style>
-
-    <style name="ShapeAppearanceOverlay.App.Button.Rounded" parent="">
-        <item name="cornerSize">12dp</item>
+    <style name="Widget.Shufuroom.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/brand_white</item>
+        <item name="itemIconTint">@color/nav_item_colors</item>
+        <item name="itemTextColor">@color/nav_item_colors</item>
     </style>
 </resources>

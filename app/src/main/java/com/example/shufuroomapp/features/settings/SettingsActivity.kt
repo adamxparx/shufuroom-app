@@ -44,7 +44,7 @@ class SettingsActivity : AppCompatActivity(), SettingsContract.View {
             presenter.logout()
         }
 
-        binding.btnBack.setOnClickListener {
+        binding.settingsToolbar.setNavigationOnClickListener {
             finish()
         }
     }

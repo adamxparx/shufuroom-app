@@ -8,9 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="32dp"
-    android:background="@color/bg_cream"
     tools:context=".features.auth.login.LoginActivity">
-
     <TextView
         android:id="@+id/tvLoginTitle"
         android:layout_width="wrap_content"
@@ -18,7 +16,6 @@
         android:text="Login"
         android:textSize="36sp"
         android:textStyle="bold"
-        android:textColor="@color/text_burgundy"
         android:layout_marginBottom="40dp"/>
 
     <EditText
@@ -29,8 +26,6 @@
         android:inputType="textEmailAddress"
         android:background="@drawable/bg_edittext"
         android:paddingHorizontal="16dp"
-        android:textColor="@color/text_burgundy"
-        android:textColorHint="@color/text_burgundy"
         android:layout_marginBottom="20dp"/>
 
     <EditText
@@ -41,8 +36,6 @@
         android:inputType="textPassword"
         android:background="@drawable/bg_edittext"
         android:paddingHorizontal="16dp"
-        android:textColor="@color/text_burgundy"
-        android:textColorHint="@color/text_burgundy"
         android:layout_marginBottom="24dp" />
 
     <com.google.android.material.button.MaterialButton
@@ -53,8 +46,6 @@
         android:textAllCaps="false"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/button_pink"
         app:cornerRadius="12dp"
         android:layout_marginBottom="24dp" />
 
@@ -73,8 +64,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account yet? "
-            android:textColor="@color/text_burgundy"/>
+            android:text="Don't have an account yet? " />
 
         <TextView
             android:id="@+id/tvSignUp"
@@ -82,7 +72,6 @@
             android:layout_height="wrap_content"
             android:text="Sign up"
             android:textStyle="bold"
-            android:textColor="@color/text_burgundy"
             android:clickable="true"
             android:focusable="true"/>
     </LinearLayout>

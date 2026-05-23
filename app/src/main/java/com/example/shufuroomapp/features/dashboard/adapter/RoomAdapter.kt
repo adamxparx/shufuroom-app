@@ -1,5 +1,6 @@
 package com.example.shufuroomapp.features.dashboard.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +8,7 @@ import coil.load
 import com.example.shufuroomapp.R
 import com.example.shufuroomapp.databinding.ItemRoomBinding
 import com.example.shufuroomapp.features.dashboard.data.RoomResponse
+import com.example.shufuroomapp.features.rooms.detail.RoomDetailsActivity
 
 class RoomAdapter(private var rooms: List<RoomResponse>) :
     RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() {
@@ -36,6 +38,13 @@ class RoomAdapter(private var rooms: List<RoomResponse>) :
                 placeholder(android.R.color.darker_gray) // Shows while downloading
                 error(android.R.drawable.ic_menu_report_image) // Shows if URL is broken
             }
+        }
+
+        holder.itemView.setOnClickListener { view ->
+            val intent = Intent(view.context, RoomDetailsActivity::class.java)
+            // Package the room object into the Intent
+            intent.putExtra("EXTRA_ROOM", room)
+            view.context.startActivity(intent)
         }
     }
 

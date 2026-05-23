@@ -16,17 +16,14 @@ object RetrofitClient {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
-    // Auth Interceptor grabbing the Global Context!
     private val authInterceptor = Interceptor { chain ->
         val originalRequest = chain.request()
         val urlPath = originalRequest.url.encodedPath
 
-        // 1. Skip adding the token for Login and Register endpoints
         if (urlPath.contains("/api/auth/login") || urlPath.contains("/api/auth/register")) {
             return@Interceptor chain.proceed(originalRequest)
         }
 
-        // 2. Otherwise, attach the token as normal
         val prefManager = PrefManager(ShufuRoomApplication.appContext)
         val token = prefManager.getToken()
 
@@ -47,7 +44,6 @@ object RetrofitClient {
         .writeTimeout(60, TimeUnit.SECONDS)
         .build()
 
-    // Back to being a simple variable!
     val instance: ApiService by lazy {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)

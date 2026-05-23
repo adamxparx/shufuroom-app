@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@color/bg_cream">
-
+    android:fillViewport="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +17,6 @@
             android:text="Sign Up"
             android:textSize="36sp"
             android:textStyle="bold"
-            android:textColor="@color/text_burgundy"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="40dp"/>
 
@@ -31,8 +28,6 @@
             android:inputType="textPersonName"
             android:background="@drawable/bg_edittext"
             android:paddingHorizontal="16dp"
-            android:textColor="@color/text_burgundy"
-            android:textColorHint="@color/text_burgundy"
             android:layout_marginBottom="16dp"/>
 
         <EditText
@@ -43,8 +38,6 @@
             android:inputType="textPersonName"
             android:background="@drawable/bg_edittext"
             android:paddingHorizontal="16dp"
-            android:textColor="@color/text_burgundy"
-            android:textColorHint="@color/text_burgundy"
             android:layout_marginBottom="16dp"/>
 
         <EditText
@@ -55,8 +48,6 @@
             android:inputType="textEmailAddress"
             android:background="@drawable/bg_edittext"
             android:paddingHorizontal="16dp"
-            android:textColor="@color/text_burgundy"
-            android:textColorHint="@color/text_burgundy"
             android:layout_marginBottom="16dp"/>
 
         <EditText
@@ -67,8 +58,6 @@
             android:inputType="textPassword"
             android:background="@drawable/bg_edittext"
             android:paddingHorizontal="16dp"
-            android:textColor="@color/text_burgundy"
-            android:textColorHint="@color/text_burgundy"
             android:layout_marginBottom="16dp"/>
 
         <EditText
@@ -79,8 +68,6 @@
             android:inputType="textPassword"
             android:background="@drawable/bg_edittext"
             android:paddingHorizontal="16dp"
-            android:textColor="@color/text_burgundy"
-            android:textColorHint="@color/text_burgundy"
             android:layout_marginBottom="24dp"/>
 
         <com.google.android.material.button.MaterialButton
@@ -91,8 +78,6 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/button_pink"
             app:cornerRadius="12dp"
             android:layout_marginBottom="24dp"/>
 
@@ -111,8 +96,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an account? "
-                android:textColor="@color/text_burgundy"/>
+                android:text="Already have an account? " />
 
             <TextView
                 android:id="@+id/tvLogin"
@@ -120,7 +104,6 @@
                 android:layout_height="wrap_content"
                 android:text="Login"
                 android:textStyle="bold"
-                android:textColor="@color/text_burgundy"
                 android:clickable="true"
                 android:focusable="true"/>
         </LinearLayout>
